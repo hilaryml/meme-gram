@@ -5,7 +5,7 @@ angular.module('app', ['templates', 'ui.router', 'ngMessages'])
       .state('home', {
         url: '/',
         templateUrl: 'angular/templates/application/index.html',
-        controller: 'UsersController as user'
+        controller: 'HomeController as home'
       })
       .state('home.signin', {
         url: '/signin',
@@ -19,4 +19,5 @@ angular.module('app', ['templates', 'ui.router', 'ngMessages'])
       })
 
   $urlRouterProvider.otherwise('/');
+  $locationProvider.html5Mode(true);
 });
