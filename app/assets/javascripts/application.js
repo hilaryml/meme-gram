@@ -14,4 +14,5 @@
 //= require angular-ui-router
 //= require angular-rails-templates
 //= require angular-resource
+//= require angular-messages
 //= require_tree ./angular
