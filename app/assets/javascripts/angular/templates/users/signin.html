@@ -1,4 +1,5 @@
 <h4>SIGN IN</h4>
+
 <form ng-submit="user.signIn()">
 
   <input
@@ -10,7 +11,7 @@
 
   <div ng-messages="form.username.$touched">
     <div ng-messages="form.username.$error.required">
-        Username required!
+      Username required!
     </div>
   </div>
 
@@ -24,10 +25,10 @@
 
   <div ng-messages="form.password.$touched">
     <div ng-messages="form.password.$error.required">
-        Password required!
+      Password required!
     </div>
     <div ng-messages="form.password.$error.minlength">
-        Password must be more than 6 characters!
+      Password must be more than 6 characters!
     </div>
   </div>
 
