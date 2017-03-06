@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :users
   resources :posts
   resources :sessions
-  
-  root 'posts#index'
-  get '*path' => 'posts#index'
+
+  root 'application#index'
+  get '*path' => 'application#index'
 end
