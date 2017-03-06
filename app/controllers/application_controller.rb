@@ -3,6 +3,9 @@ class ApplicationController < ActionController::Base
 
   after_action  :set_csrf_cookie_for_ng
 
+  def index
+  end
+
   def current_user
     session[:user_id] ||= User.new
   end
