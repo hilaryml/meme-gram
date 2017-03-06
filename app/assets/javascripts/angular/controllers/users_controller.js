@@ -1,22 +1,18 @@
 angular.module('app', ['ui.router', 'templates'])
 
   .controller('UsersController', function ($scope, UserService, $location) {
-    //callback for ng-click createUser
-    $scope.createUser = function () {
-      $location.path('/users/new');
+    var ctrl = this;
+
+    //callback for ng-click signUp
+    ctrl.signUp = function () {
+      UserService.signUp(ctrl.user).then(function (response) {
+        ctrl.signIn(response.data);
+      });
     }
 
-    //callback for ng-click editUser
-    $scope.editUser = function (userId) {
-      $location.path('users/edit' + userId);
-      $scope.users = UserService.query();
+    //callback for ng-click signIn
+    ctrl.signIn = function () {
+      UserService.signIn(ctrl.user);
     }
 
-    //callback for ng-click deleteUser
-    $scope.deleteUser = function (userId) {
-      UserService.delete({ id: userId });
-      $scope.users = UserService.query();
-    }
-
-    $scope.users = UserService.query();
   });
