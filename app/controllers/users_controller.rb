@@ -35,7 +35,6 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
-    render json: {status: :not_found} unless @user
   end
 
   def user_params
