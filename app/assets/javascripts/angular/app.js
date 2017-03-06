@@ -1,12 +1,12 @@
-var app = angular.module('app', ['templates', 'ui.router']);
+angular.module('app', ['templates', 'ui.router'])
 
-app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
-  $stateProvider
-    .state('/', {
-      url: '/',
-      templateUrl: 'angular/templates/users/index.html',
-      controller: 'UsersController'
-    });
+  .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+    $stateProvider
+      .state('/posts', {
+        url: '/posts',
+        templateUrl: 'angular/templates/posts/index.html',
+        controller: 'PostsController'
+  });
 
-  $urlRouterProvider.otherwise('/');
-}]);
+  $urlRouterProvider.otherwise('/posts');
+});
