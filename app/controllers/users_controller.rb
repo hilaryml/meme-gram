@@ -29,7 +29,6 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    render json: {status: :ok}
   end
 
   private
