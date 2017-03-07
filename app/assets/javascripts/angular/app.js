@@ -9,12 +9,12 @@ angular.module('app', ['templates', 'ui.router', 'ngMessages'])
       })
       .state('home.signin', {
         url: '/signin',
-        templateUrl: 'users/signin.html',
+        templateUrl: 'angular/templates/users/signin.html',
         controller: 'UsersController as user'
       })
       .state('home.signup', {
         url: '/signup',
-        templateUrl: 'users/signup.html',
+        templateUrl: 'angular/templates/users/signup.html',
         controller: 'UsersController as user'
       })
 
