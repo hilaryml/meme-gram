@@ -1,10 +1,10 @@
 angular.module('app', ['templates', 'ui.router', 'ngMessages'])
 
-  .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+  .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: '../assets/javascripts/angular/templates/application/home.html',
+        templateUrl: 'angular/templates/application/home.html',
         controller: 'UsersController as user'
       })
       .state('home.signin', {
@@ -19,5 +19,4 @@ angular.module('app', ['templates', 'ui.router', 'ngMessages'])
       })
 
   $urlRouterProvider.otherwise('/');
-  $locationProvider.html5Mode(true);
 });

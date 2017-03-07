@@ -1,4 +1,4 @@
-angular.module('app', ['ui.router', 'templates'])
+angular.module('app')
 
   .controller('PostsController', function($scope) {
 

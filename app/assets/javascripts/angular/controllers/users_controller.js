@@ -1,6 +1,6 @@
-angular.module('app', ['ui.router', 'templates'])
+angular.module('app')
 
-  .controller('UsersController', function ($scope, UserService, $location) {
+  .controller('UsersController', ['UserService', function ($scope, UserService, $location) {
     var ctrl = this;
 
     //callback for ng-click signUp
@@ -15,4 +15,4 @@ angular.module('app', ['ui.router', 'templates'])
       UserService.signIn(ctrl.user);
     }
 
-  });
+  }]);
