@@ -4,7 +4,7 @@ angular.module('app', ['templates', 'ui.router', 'ngMessages'])
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'application/home.html',
+        templateUrl: '../assets/javascripts/angular/templates/application/home.html',
         controller: 'UsersController as user'
       })
       .state('home.signin', {
