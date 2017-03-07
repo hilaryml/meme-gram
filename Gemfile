@@ -38,6 +38,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'paperclip'
 gem 'angularjs-rails'
 gem 'angular-rails-templates'
+gem 'bower-rails'
 gem 'angular_rails_csrf'
 gem 'angular-ui-bootstrap-rails'
 

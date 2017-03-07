@@ -1,0 +1,13 @@
+{:uriI"œfile://app/assets/javascripts/angular/templates/application/index.html?type=text/ng-html&id=cba7bd413160e8be3125129186df524b90c2cbaef3e01625ef30e86c69fd6ea0:ET:load_pathI"app/assets/javascripts;T:filenameI"Dapp/assets/javascripts/angular/templates/application/index.html;T:	nameI"(angular/templates/application/index;T:logical_pathI"-angular/templates/application/index.html;T:content_typeI"text/ng-html;T:sourceI"ÿ<h1>Welcome to Memegram!</h1>
+
+{{ test }}
+
+<div ng-controller="UsersController as user">
+  <h4><a href="#" ui-sref="signin" ui-sref-active="active">Sign In</a>
+  or <a href="#" ui-sref="signup" ui-sref-active="active">Sign Up</a> to continue.</h4>
+</div>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Rfile-digest://app/assets/javascripts/angular/templates/application/index.html;TTF:charsetI"
+utf-8;F:digest"%Ì‘Ë8|G=i¡/aäncu#ñ6“¼×“ÄÖó:lengthiÿ:dependencies_digest"%ù”WPW&VÂÎÑ”FÜÓ©Î§pK_kğX¤ğ£:idI"Ecba7bd413160e8be3125129186df524b90c2cbaef3e01625ef30e86c69fd6ea0;F:
+mtimel+rç½X
