@@ -4,17 +4,17 @@ angular.module('app', ['templates', 'ui.router', 'ngMessages'])
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'angular/templates/application/index.html',
-        controller: 'HomeController as home'
+        templateUrl: 'application/home.html',
+        controller: 'UsersController as user'
       })
       .state('home.signin', {
         url: '/signin',
-        templateUrl: 'angular/templates/users/signin',
+        templateUrl: 'users/signin.html',
         controller: 'UsersController as user'
       })
       .state('home.signup', {
         url: '/signup',
-        templateUrl: 'angular/templates/users/signup',
+        templateUrl: 'users/signup.html',
         controller: 'UsersController as user'
       })
 
