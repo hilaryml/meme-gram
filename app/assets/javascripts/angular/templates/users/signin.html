@@ -7,9 +7,10 @@
     name="username"
     ng-model="user.username"
     required="required"
-    ng-model="ctrl.username" />
+    ng-model="ctrl.username"
+    placeholder="Username" />
 
-  <div ng-messages="form.username.$touched">
+  <div ng-if="form.username.$touched">
     <div ng-messages="form.username.$error.required">
       Username required!
     </div>
@@ -21,9 +22,10 @@
     ng-model="user.password"
     required="required"
     minlength="6"
-    ng-model="ctrl.password" />
+    ng-model="ctrl.password"
+    placeholder="Password" />
 
-  <div ng-messages="form.password.$touched">
+  <div ng-if="form.password.$touched">
     <div ng-messages="form.password.$error.required">
       Password required!
     </div>
