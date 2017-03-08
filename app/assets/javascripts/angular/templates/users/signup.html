@@ -1,11 +1,11 @@
 <h4>SIGN UP</h4>
 
-<form ng-submit="save()">
+<form ng-submit="user.signUp(user)">
 
   <input
     type="text"
     name="username"
-    ng-model="newUser.username"
+    ng-model="user.username"
     required="required"
     placeholder="Username" />
 
@@ -18,7 +18,7 @@
   <input
     type="email"
     name="email"
-    ng-model="newUser.email"
+    ng-model="user.email"
     required="required"
     placeholder="Email" />
 
@@ -31,7 +31,7 @@
   <input
     type="password"
     name="password"
-    ng-model="newUser.password"
+    ng-model="user.password"
     required="required"
     minlength="6"
     placeholder="Password" />
