@@ -1,18 +1,30 @@
 angular.module('app')
 
-  .controller('UsersController', ['UserService', function ($scope, UserService, $location) {
+  .controller('UsersController', ['UserService', '$scope', function ($scope, UserService) {
     var ctrl = this;
 
-    //callback for ng-click signUp
+    //callback for ng-submit signUp
     ctrl.signUp = function () {
-      UserService.signUp(ctrl.user).then(function (response) {
-        ctrl.signIn(response.data);
-      });
+      var user = new User();
+
+      user.username = 
+      user.email =
+
+      user.$save();
+
+      $scope.save = function () {
+        $scope.newUser.save({ user: $scope.newUser }, function () {
+          ctrl.signInUser(response.data)
+        })
+      }
+      //UserService.signUpUser(user).then(function (response) {
+        //ctrl.signInUser(response.data);
+      //});
     }
 
-    //callback for ng-click signIn
-    ctrl.signIn = function () {
-      UserService.signIn(ctrl.user);
+    //callback for ng-submit signIn
+    ctrl.signIn = function (user) {
+      UserService.signInUser(user);
     }
 
   }]);
