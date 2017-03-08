@@ -1,4 +1,4 @@
-angular.module('app', ['templates', 'ui.router', 'ngMessages'])
+angular.module('app', ['templates', 'ui.router', 'ngMessages', 'ngResource'])
 
   .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider

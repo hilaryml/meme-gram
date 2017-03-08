@@ -7,16 +7,17 @@ angular.module('app')
     ctrl.signUp = function () {
       var user = new User();
 
-      user.username = 
-      user.email =
+      user.username = newUser.username;
+      user.email = newUser.email;
+      user.password = newUser.password;
 
       user.$save();
 
-      $scope.save = function () {
-        $scope.newUser.save({ user: $scope.newUser }, function () {
-          ctrl.signInUser(response.data)
-        })
-      }
+      //$scope.save = function () {
+        //$scope.newUser.save({ user: $scope.newUser }, function () {
+          //ctrl.signInUser(response.data)
+        //})
+      //}
       //UserService.signUpUser(user).then(function (response) {
         //ctrl.signInUser(response.data);
       //});

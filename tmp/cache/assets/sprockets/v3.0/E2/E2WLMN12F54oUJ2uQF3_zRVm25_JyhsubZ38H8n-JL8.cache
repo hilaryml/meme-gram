@@ -1,4 +1,4 @@
-<h4>SIGN UP</h4>
+{:uriI"ófile://app/assets/javascripts/angular/templates/users/signup.html?type=text/ng-html&id=68c32f7b85a0451b6f1359f74f90d625feb9923955049fcd5f616834842a087b:ET:load_pathI"app/assets/javascripts;T:filenameI"?app/assets/javascripts/angular/templates/users/signup.html;T:	nameI"#angular/templates/users/signup;T:logical_pathI"(angular/templates/users/signup.html;T:content_typeI"text/ng-html;T:sourceI"à<h4>SIGN UP</h4>
 
 <form ng-submit="save()">
 
@@ -50,3 +50,8 @@
 </form>
 
 <p>Already have an account? <a href="#" ui-sref="signin" ui-sref-active="active">Sign in here.</a></p>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Mfile-digest://app/assets/javascripts/angular/templates/users/signup.html;TTF:charsetI"
+utf-8;F:digest"%ıêÁ'’üúÒ⁄‹~πá>€ÌÀ<n|ù7\áÄìÑ:åº»:lengthià:dependencies_digest"%ÛµãS¨5%|éT…¯©∫„9$˚¡<˝fói≠¨:idI"E68c32f7b85a0451b6f1359f74f90d625feb9923955049fcd5f616834842a087b;F:
+mtimel+ìtøX
