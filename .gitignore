@@ -1,0 +1,11 @@
+# ignore bundle config
+/.bundle
+
+# ignore all tmp and logfiles
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# ignore my vendor files
+/vendor/assets
