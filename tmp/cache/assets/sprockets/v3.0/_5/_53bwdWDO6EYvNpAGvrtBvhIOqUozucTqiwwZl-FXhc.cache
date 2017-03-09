@@ -1,57 +1,0 @@
-{:uriI"—file://app/assets/javascripts/angular/templates/users/signup.html?type=text/ng-html&id=cd4be5693709f32af27cfd623bd1050b19d01149b969ae2cc47694425f8bb927:ET:load_pathI"app/assets/javascripts;T:filenameI"?app/assets/javascripts/angular/templates/users/signup.html;T:	nameI"#angular/templates/users/signup;T:logical_pathI"(angular/templates/users/signup.html;T:content_typeI"text/ng-html;T:sourceI"<h4>SIGN UP</h4>
-
-<form ng-submit="user.signUp()">
-
-  <input
-    type="text"
-    name="username"
-    ng-model="newUser.username"
-    required="required"
-    placeholder="Username" />
-
-  <div ng-if="form.username.$touched">
-    <div ng-messages="form.username.$error.required">
-      Username required!
-    </div>
-  </div>
-
-  <input
-    type="email"
-    name="email"
-    ng-model="newUser.email"
-    required="required"
-    placeholder="Email" />
-
-  <div ng-if="form.username.$touched">
-    <div ng-messages="form.username.$error.required">
-      Email required!
-    </div>
-  </div>
-
-  <input
-    type="password"
-    name="password"
-    ng-model="newUser.password"
-    required="required"
-    minlength="6"
-    placeholder="Password" />
-
-  <div ng-if="form.password.$touched">
-    <div ng-messages="form.password.$error.required">
-      Password required!
-    </div>
-    <div ng-messages="form.password.$error.minlength">
-      Password must be more than 6 characters!
-    </div>
-  </div>
-
-  <button type="submit" class="btn btn-primary">Sign Up</button>
-
-</form>
-
-<p>Already have an account? <a href="#" ui-sref="signin" ui-sref-active="active">Sign in here.</a></p>
-;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Mfile-digest://app/assets/javascripts/angular/templates/users/signup.html;TTF:charsetI"
-utf-8;F:digest"%w0>Ko:~5;nR_2yÙN ‹	Cª,ˆ€Ö““:lengthi:dependencies_digest"%†UÍ¢GêÙ ¿1£Ùâíô÷…½¦u0·?MÓŠï:idI"Ecd4be5693709f32af27cfd623bd1050b19d01149b969ae2cc47694425f8bb927;F:
-mtimel+š]ÀX

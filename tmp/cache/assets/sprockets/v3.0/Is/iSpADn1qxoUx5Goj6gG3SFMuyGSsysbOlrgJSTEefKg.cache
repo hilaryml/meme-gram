@@ -1,7 +1,0 @@
-{:uriI"—file://app/assets/javascripts/angular/templates/users/signup.html?type=text/ng-html&id=ab154a7bf7d1ca04da36db76da85ab40f49ea7a1700c70244d5354c084d5f9c7:ET:load_pathI"app/assets/javascripts;T:filenameI"?app/assets/javascripts/angular/templates/users/signup.html;T:	nameI"#angular/templates/users/signup;T:logical_pathI"(angular/templates/users/signup.html;T:content_typeI"text/ng-html;T:sourceI"Q<h4>SIGN UP</h4>
-<div ng-include src="'/templates/users/_form.html'"></div>
-;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Mfile-digest://app/assets/javascripts/angular/templates/users/signup.html;TTF:charsetI"
-utf-8;F:digest"%IŠÁ¬(i—W©»!äÏs¿ò‘ÞDþõ-Þép¬ ø:lengthiQ:dependencies_digest"%2ß«Nw‘L‘«=ÎEh²Ñ·°WX7X*·½I66-ý:idI"Eab154a7bf7d1ca04da36db76da85ab40f49ea7a1700c70244d5354c084d5f9c7;F:
-mtimel+mÓ½X

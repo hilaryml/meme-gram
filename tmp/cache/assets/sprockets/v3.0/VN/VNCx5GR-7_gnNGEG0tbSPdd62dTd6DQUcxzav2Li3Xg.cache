@@ -1,54 +1,0 @@
-{:uriI"ƒfile://app/assets/templates/users/signup.html?type=text/ng-html&id=51703ddd756753f3d40bc59e89c0b9b6efc32b6a7cef028ea4b94e47f99b8329:ET:load_pathI"app/assets/templates;T:filenameI"+app/assets/templates/users/signup.html;T:	nameI"users/signup;T:logical_pathI"users/signup.html;T:content_typeI"text/ng-html;T:sourceI"J<h4>SIGN UP</h4>
-
-<form ng-submit="user.signUp()">
-
-  <input
-    type="text"
-    name="username"
-    ng-model="user.username"
-    required="required" />
-
-  <div ng-messages="form.username.$touched">
-    <div ng-messages="form.username.$error.required">
-      Username required!
-    </div>
-  </div>
-
-  <input
-    type="email"
-    name="email"
-    ng-model="user.email"
-    required="required" />
-
-  <div ng-messages="form.username.$touched">
-    <div ng-messages="form.username.$error.required">
-      Email required!
-    </div>
-  </div>
-
-  <input
-    type="password"
-    name="password"
-    ng-model="user.password"
-    required="required"
-    minlength="6" />
-
-  <div ng-messages="form.password.$touched">
-    <div ng-messages="form.password.$error.required">
-      Password required!
-    </div>
-    <div ng-messages="form.password.$error.minlength">
-      Password must be more than 6 characters!
-    </div>
-  </div>
-
-  <button type="submit" class="btn btn-primary">Sign Up</button>
-
-</form>
-
-<p>Already have an account? <a href="#" ui-sref="signin" ui-sref-active="active">Sign in here.</a></p>
-;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"9file-digest://app/assets/templates/users/signup.html;TTF:charsetI"
-utf-8;F:digest"%Ü¡Ü˜ò³“ä¶Ak=Æ,uUåi*pgªÑ)°çÆCÐÛ:lengthiJ:dependencies_digest"%z21-RùTˆ¨øáFMå°´XHòìª›ØË‚†Æ&M•:idI"E51703ddd756753f3d40bc59e89c0b9b6efc32b6a7cef028ea4b94e47f99b8329;F:
-mtimel++Ú½X

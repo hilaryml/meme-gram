@@ -1,8 +1,0 @@
-{:uriI"œfile://app/assets/javascripts/angular/templates/application/index.html?type=text/ng-html&id=f04c304f2eb259c740d52733b80a9d981642d45f51ebab95564799217a042ed5:ET:load_pathI"app/assets/javascripts;T:filenameI"Dapp/assets/javascripts/angular/templates/application/index.html;T:	nameI"(angular/templates/application/index;T:logical_pathI"-angular/templates/application/index.html;T:content_typeI"text/ng-html;T:sourceI"»<h1>Welcome to Memegram!</h1>
-<h4><a href="#" ui-sref="signin" ui-sref-active="active">Sign In</a>
-  or <a href="#" ui-sref="signup" ui-sref-active="active">Sign Up</a> to continue.</h4>
-;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Rfile-digest://app/assets/javascripts/angular/templates/application/index.html;TTF:charsetI"
-utf-8;F:digest"%&%V£›Áhq¹VÊ"žïÄtš'±ßûú¦ôQµC½:lengthi»:dependencies_digest"%Ähm–¸Ø†7­jyó"Aß:p}Àvwª;å 4ÍR(æl:idI"Ef04c304f2eb259c740d52733b80a9d981642d45f51ebab95564799217a042ed5;F:
-mtimel+Ò½X

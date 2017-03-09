@@ -1,16 +1,0 @@
-{:uriI"œfile://app/assets/javascripts/angular/templates/application/index.html?type=text/ng-html&id=92788e4b3d41f66f5a88d50cafcfc6deb109cd3cf0e8fe9bc5d53f713e18d00d:ET:load_pathI"app/assets/javascripts;T:filenameI"Dapp/assets/javascripts/angular/templates/application/index.html;T:	nameI"(angular/templates/application/index;T:logical_pathI"-angular/templates/application/index.html;T:content_typeI"text/ng-html;T:sourceI"0<h1>Welcome to Memegram!</h1>
-
-<ul>
-  <li ng-repeat="thing in things">{{thing}}</li>
-</ul>
-
-<div ng-controller="UsersController as user">
-  <h4><a href="#" ui-sref="signin" ui-sref-active="active">Sign In</a>
-  or <a href="#" ui-sref="signup" ui-sref-active="active">Sign Up</a> to continue.</h4>
-</div>
-;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Rfile-digest://app/assets/javascripts/angular/templates/application/index.html;TTF:charsetI"
-utf-8;F:digest"%	a‡Œ†ÀbÎÚz­µ˜VõQÀğî¾©>P8«Û4:lengthi0:dependencies_digest"%(>hïzƒGT|ÒÚœ) ×}
-W7É¥ãèxÏ]#AÿÏ:idI"E92788e4b3d41f66f5a88d50cafcfc6deb109cd3cf0e8fe9bc5d53f713e18d00d;F:
-mtimel+Êã½X

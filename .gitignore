@@ -6,6 +6,3 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
-# ignore my vendor files
-/vendor/assets

@@ -1,57 +1,0 @@
-{:uriI"—file://app/assets/javascripts/angular/templates/users/signup.html?type=text/ng-html&id=810ea4adc03cb52279e982c38e3e1bde29ef94ef785f520d7ad9db49312d8018:ET:load_pathI"app/assets/javascripts;T:filenameI"?app/assets/javascripts/angular/templates/users/signup.html;T:	nameI"#angular/templates/users/signup;T:logical_pathI"(angular/templates/users/signup.html;T:content_typeI"text/ng-html;T:sourceI"µ<h4>SIGN UP</h4>
-
-<form ng-submit="signUp(user)">
-<!--removed user argument and user controller-->
-  <input
-    type="text"
-    name="username"
-    ng-model="user.username"
-    required="required"
-    placeholder="Username" />
-
-  <div ng-if="form.username.$touched">
-    <div ng-messages="form.username.$error.required">
-      Username required!
-    </div>
-  </div>
-
-  <input
-    type="email"
-    name="email"
-    ng-model="user.email"
-    required="required"
-    placeholder="Email" />
-
-  <div ng-if="form.username.$touched">
-    <div ng-messages="form.username.$error.required">
-      Email required!
-    </div>
-  </div>
-
-  <input
-    type="password"
-    name="password"
-    ng-model="user.password"
-    required="required"
-    minlength="6"
-    placeholder="Password" />
-
-  <div ng-if="form.password.$touched">
-    <div ng-messages="form.password.$error.required">
-      Password required!
-    </div>
-    <div ng-messages="form.password.$error.minlength">
-      Password must be more than 6 characters!
-    </div>
-  </div>
-
-  <button type="submit" class="btn btn-primary">Sign Up</button>
-
-</form>
-
-<p>Already have an account? <a href="#" ui-sref="signin" ui-sref-active="active">Sign in here.</a></p>
-;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Mfile-digest://app/assets/javascripts/angular/templates/users/signup.html;TTF:charsetI"
-utf-8;F:digest"%f¡ój³l@„Z|YlR¯mñµ×A5×§ Æ§':lengthiµ:dependencies_digest"%ğj+±z$Ì˜ch\L•ÀLAmõ±!‰ÀF@ë˜:idI"E810ea4adc03cb52279e982c38e3e1bde29ef94ef785f520d7ad9db49312d8018;F:
-mtimel+‰ÀX
