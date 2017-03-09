@@ -1,6 +1,9 @@
 angular.module('app', ['templates', 'ui.router', 'ngMessages'])
 
-  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+  .config(['$httpProvider','$stateProvider', '$urlRouterProvider', function($httpProvider, $stateProvider, $urlRouterProvider) {
+    $httpProvider.defaults.headers.common['X-CSRF-Token']
+    = $('meta[name=csrf-token]').attr('content')
+
     $stateProvider
       .state('home', {
         url: '/',
@@ -17,13 +20,13 @@ angular.module('app', ['templates', 'ui.router', 'ngMessages'])
         templateUrl: 'angular/templates/users/signup.html',
         controller: 'UsersController as ctrl'
       })
-      .state('users', { //change to home.users
-        url: '/users',
+      .state('home.users', { 
+        url: 'users',
         templateUrl: 'angular/templates/users/index.html',
         controller: 'UsersController as ctrl'
       })
-      .state('users.show', { //change to home.user
-        url: '/users/:userId',
+      .state('home.user', {
+        url: 'users/:userId',
         templateUrl: 'angular/templates/users/show.html',
         controller: 'UsersController as ctrl'
         /*resolve: function (UserService, $stateParams) {

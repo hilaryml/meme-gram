@@ -4,7 +4,8 @@ angular
 
     return {
       getUsers,
-      getUser
+      getUser,
+      signUpUser
     }
 
     function getUsers() {
@@ -15,6 +16,21 @@ angular
 
     function getUser(id) {
       return $http.get('/api/users/' + id)
+        .then(response => response.data)
+        .catch(error => console.log(error))
+    }
+
+    function signUpUser(userInfo) {
+      const request = {
+        method: 'POST',
+        url: '/api/users',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: { user: userInfo }
+      }
+
+      return $http(request)
         .then(response => response.data)
         .catch(error => console.log(error))
     }

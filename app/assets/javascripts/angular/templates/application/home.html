@@ -1,6 +1,10 @@
-<h1>Welcome to Memegram!</h1>
+<ui-view>
+  <h1>Welcome to Memegram!</h1><!--if this is placed inside the ui-view, then the content
+    replaces the current template, if it is outside, then content appears underneath-->
 
-<h4><a href="" ui-sref="home.signin">Sign In</a>
-or <a href="" ui-sref="home.signup">Sign Up</a> to continue.</h4>
+  <h4><a href="" ui-sref="home.signin">Sign In</a>
+  or <a href="" ui-sref="home.signup">Sign Up</a> to continue.</h4>
 
-<ui-view></ui-view>
+  <!--other links that will need to show up after a user is logged in...-->
+  <a href="" ui-sref="home.users">Users</a>
+</ui-view>
