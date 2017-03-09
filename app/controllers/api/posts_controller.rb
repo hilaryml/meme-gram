@@ -39,7 +39,8 @@ class Api::PostsController < ApplicationController
   private
 
   def set_post
-    @post = Post.find(params[:id])
+    @post = Post.find_by(id: params[:id])
+    render json: { error: "Not found" } unless @post
   end
 
   def post_params
