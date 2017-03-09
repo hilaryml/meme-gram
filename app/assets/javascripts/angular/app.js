@@ -17,10 +17,18 @@ angular.module('app', ['templates', 'ui.router', 'ngMessages'])
         templateUrl: 'angular/templates/users/signup.html',
         controller: 'UsersController as ctrl'
       })
-      .state('index', {
+      .state('users', {
         url: '/users',
-        templateUrl: 'angular/templates/users/index.html',
+        templateUrl: 'angular/templates/users/users.index.html',
         controller: 'UsersController as ctrl'
+      })
+      .state('users.show', {
+        url: '/users/:userId',
+        templateUrl: 'angular/templates/users/users.show.html',
+        controller: 'UsersController as ctrl'
+        /*resolve: function (UserService, $stateParams) {
+          return UserService.getUser($stateParams.id)
+        }*/
       })
 
   $urlRouterProvider.otherwise('/');

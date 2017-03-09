@@ -6,8 +6,18 @@ angular.module('app')
     //  $state.go('user');
     var ctrl = this;
 
-    UserService.users()
+    UserService
+      .getUsers()
       .then(data => ctrl.users = data)
+
+    if ($stateParams.userId) {
+      UserService
+        .getUser($stateParams.userId)
+        .then(data => ctrl.user = data)
+    }
+
+    /*UserService.getUser()
+      .then(data => ctrl.user = data)*/
 
     /*ctrl.signUp = function (user) {
       UserService.signUpUser(user).then(function (response) {

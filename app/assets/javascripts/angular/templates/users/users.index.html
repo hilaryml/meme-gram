@@ -1,0 +1,15 @@
+<h1>Users</h1>
+
+<a
+  ui-sref="users.show({ userId: user.id })"
+  data-ng-repeat="user in ctrl.users">
+
+  <h3>
+    <span data-ng-bind="user.username"></span>
+  </h3>
+</a>
+
+
+<div class="userShow">
+  <ui-view></ui-view>
+</div>

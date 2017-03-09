@@ -3,11 +3,18 @@ angular
   .factory('UserService', ['$http', function ($http) {
 
     return {
-      users
+      getUsers,
+      getUser
     }
 
-    function users() {
+    function getUsers() {
       return $http.get('/api/users')
+        .then(response => response.data)
+        .catch(error => console.log(error))
+    }
+
+    function getUser(id) {
+      return $http.get('/api/users/' + id)
         .then(response => response.data)
         .catch(error => console.log(error))
     }
