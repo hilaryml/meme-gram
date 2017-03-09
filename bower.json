@@ -1,5 +1,5 @@
 {
-  "lib": {
+  "vendor": {
     "name": "bower-rails generated vendor assets",
     "dependencies": {
       "angular": "latest",
