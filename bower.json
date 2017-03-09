@@ -4,7 +4,7 @@
     "dependencies": {
       "angular": "latest",
       "angular-ui-router": "latest",
-      "angular-messages": "latest"
+      "angular-messages": "latest",
     }
   }
 }

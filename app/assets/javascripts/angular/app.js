@@ -7,24 +7,24 @@ angular.module('app', ['templates', 'ui.router', 'ngMessages'])
         templateUrl: 'angular/templates/application/home.html',
         controller: 'UsersController as ctrl'
       })
-      .state('signin', {
-        url: '/signin',
+      .state('home.signin', {
+        url: 'signin',
         templateUrl: 'angular/templates/users/signin.html',
         controller: 'UsersController as ctrl'
       })
-      .state('signup', {
-        url: '/signup',
+      .state('home.signup', {
+        url: 'signup',
         templateUrl: 'angular/templates/users/signup.html',
         controller: 'UsersController as ctrl'
       })
-      .state('users', {
+      .state('users', { //change to home.users
         url: '/users',
-        templateUrl: 'angular/templates/users/users.index.html',
+        templateUrl: 'angular/templates/users/index.html',
         controller: 'UsersController as ctrl'
       })
-      .state('users.show', {
+      .state('users.show', { //change to home.user
         url: '/users/:userId',
-        templateUrl: 'angular/templates/users/users.show.html',
+        templateUrl: 'angular/templates/users/show.html',
         controller: 'UsersController as ctrl'
         /*resolve: function (UserService, $stateParams) {
           return UserService.getUser($stateParams.id)
