@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  resources :users
-  resources :posts
-  resources :sessions
+  namespace :api do
+    resources :users
+    resources :posts
+    resources :sessions
+  end
 
   root 'application#index'
   get '*path' => 'application#index'
