@@ -3,13 +3,18 @@ angular.module('app')
   .controller('UsersController', ['$scope', '$state', '$stateParams', 'UserService',
   function ($scope, $state, $stateParams, UserService) {
 
-    //  $state.go('user');
     var ctrl = this;
 
     ctrl.signedIn = false;
     ctrl.signUp = signUp;
     ctrl.signIn = signIn;
     ctrl.signOut = signOut;
+
+    if (ctrl.signedIn === true) {
+      $scope.nav_partial_url = "application/_userNavbar.html"
+    } else {
+      $scope.nav_partial_url = "application/_navbar.html"
+    }
 
     UserService
       .getUsers()
@@ -29,6 +34,7 @@ angular.module('app')
           data => ctrl.user = data) //used to be $scope.$parent.users but I'm getting double entries...
 
       $state.go('home.users')
+      signedIn = true;
     }
 
     function signIn() {
@@ -37,6 +43,7 @@ angular.module('app')
         .then(data => ctrl.user = data)
 
       $state.go('home.users');
+      signedIn = true;
     }
 
     function signOut() {
@@ -46,6 +53,7 @@ angular.module('app')
 
       $state.go('home');
       ctrl.user = undefined;
+      signedIn = false;
     }
 
   }]);
