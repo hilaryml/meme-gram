@@ -5,7 +5,8 @@ angular
     return {
       getUsers,
       getUser,
-      signUpUser
+      signUpUser,
+      signInUser
     }
 
     function getUsers() {
@@ -35,14 +36,19 @@ angular
         .catch(error => console.log(error))
     }
 
+    function signInUser(userInfo) {
+      const request = {
+        method: 'POST',
+        url: '/api/sessions',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: { user: userInfo }
+      }
+
+      return $http(request)
+        .then(response => response.data)
+        .catch(error => console.log(error))
+    }
+
   }])
-  /*.service('UserService', ['$http', function ($http) {
-
-      this.signUpUser = function (user) {
-        return $http.post('api/users', JSON.stringify(user));
-      }
-
-      this.signInUser = function (data) {
-        return $http.post('api/sessions', JSON.stringify(data));
-      }
-    }]);*/

@@ -7,12 +7,13 @@ angular.module('app')
     var ctrl = this;
 
     ctrl.signUp = signUp;
+    ctrl.signIn = signIn;
 
     UserService
       .getUsers()
-      .then(data => $scope.users = data) //used to be ctrl.users
+      .then(data => ctrl.users = data) //used to be $scope.users
 
-    if ($stateParams.userId) {
+    if ($stateParams.userId) { //might need to use a resolve for this in app.js
       UserService
         .getUser($stateParams.userId)
         .then(data => ctrl.user = data) //used to be ctrl.user
@@ -21,21 +22,13 @@ angular.module('app')
     function signUp() {
       UserService
         .signUpUser(ctrl.user)
-        .then(user => $scope.$parent.users.push(user)) //used to be ctrl.users
+        .then(user => ctrl.users.push(user)) //used to be $scope.$parent.users but I'm getting double entries...
     }
 
-    /*UserService.getUser()
-      .then(data => ctrl.user = data)*/
-
-    /*ctrl.signUp = function (user) {
-      UserService.signUpUser(user).then(function (response) {
-        console.log(response);
-        ctrl.signIn(response.config.data);
-      })
+    function signIn() {
+      UserService
+        .signInUser(ctrl.user)
+        .then(data => ctrl.user = data)
     }
-
-    ctrl.signIn = function (user) {
-      UserService.signInUser(user);
-    }*/
 
   }]);
