@@ -33,6 +33,22 @@ angular.module('app', ['templates', 'ui.router', 'ngMessages'])
           return UserService.getUser($stateParams.id)
         }*/
       })
+      .state('home.posts', {
+        url: 'posts',
+        templateUrl: 'angular/templates/posts/index.html',
+        controller: 'PostsController as ctrl'
+      })
+      .state('home.newPost', {
+        url: 'posts/new',
+        templateUrl: 'angular/templates/posts/new.html',
+        controller: 'PostsController as ctrl'
+      })
+      .state('home.post', {
+        url: 'posts/:postId',
+        templateUrl: 'angular/templates/posts/show.html',
+        controller: 'PostsController as ctrl'
+      })
+      
 
   $urlRouterProvider.otherwise('/');
 }]);

@@ -11,9 +11,9 @@ angular.module('app')
     ctrl.signOut = signOut;
 
     if (ctrl.signedIn === true) {
-      $scope.nav_partial_url = "application/_userNavbar.html"
+      $scope.nav_partial_url = "angular/templates/application/_userNavbar.html"
     } else {
-      $scope.nav_partial_url = "application/_navbar.html"
+      $scope.nav_partial_url = "angular/templates/application/_navbar.html"
     }
 
     UserService
