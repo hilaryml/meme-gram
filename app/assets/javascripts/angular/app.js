@@ -20,7 +20,7 @@ angular.module('app', ['templates', 'ui.router', 'ngMessages'])
         templateUrl: 'angular/templates/users/signup.html',
         controller: 'UsersController as ctrl'
       })
-      .state('home.users', { 
+      .state('home.users', {
         url: 'users',
         templateUrl: 'angular/templates/users/index.html',
         controller: 'UsersController as ctrl'

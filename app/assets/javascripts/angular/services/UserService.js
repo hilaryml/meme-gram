@@ -6,7 +6,8 @@ angular
       getUsers,
       getUser,
       signUpUser,
-      signInUser
+      signInUser,
+      signOutUser
     }
 
     function getUsers() {
@@ -48,6 +49,20 @@ angular
 
       return $http(request)
         .then(response => response.data)
+        .catch(error => console.log(error))
+    }
+
+    function signOutUser(sessionId) {
+      const request = {
+        method: 'DELETE',
+        url: '/api/sessions' + sessionId,
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+
+      return $http(request)
+        .then(response => console.log(response.data.message))
         .catch(error => console.log(error))
     }
 
