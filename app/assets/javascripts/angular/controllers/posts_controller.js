@@ -1,7 +1,7 @@
 angular.module('app')
 
-  .controller('PostsController', ['$scope', '$state', '$stateParams', 'PostService',
-  function ($scope, $state, $stateParams, PostService) {
+  .controller('PostsController', ['$scope', '$state', '$stateParams', 'PostService', 'EnvService',
+  function ($scope, $state, $stateParams, PostService, EnvService) {
 
     var ctrl = this;
 
@@ -18,21 +18,22 @@ angular.module('app')
     }
 
     function addPost() {
-      
+      var memeBackground = ctrl.meme.backgroundImage;
+      var memeTopText = ctrl.meme.topText;
+      var memeBottomText = ctrl.meme.bottomText;
+
+      PostService
+        .makeMeme(EnvService.key(), memeBackground, memeTopText, memeBottomText)
+        .then(data => ctrl.post.image = "data:image/png;base64," + data)
+
+  /*    PostService
+        .addPost(ctrl.post)
+        .then(data => ctrl.posts.push(data))
+
+      $state.go('home.posts')*/
     }
 
-    /*function signUp() {
-      UserService
-        .signUpUser(ctrl.user)
-        .then(
-          data => ctrl.users.push(data),
-          data => ctrl.user = data) //used to be $scope.$parent.users but I'm getting double entries...
-
-      $state.go('home.users')
-      signedIn = true;
-    }
-
-    function signIn() {
+    /*function signIn() {
       UserService
         .signInUser(ctrl.user)
         .then(data => ctrl.user = data)

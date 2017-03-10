@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
   <head>
     <title>Memegram</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
   <body>
 
-    <div ng-app="app">
       <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="collapse navbar-collapse" id="myNavbar">
@@ -19,8 +17,6 @@
       </nav>
 
       <%= yield %>
-      
-    </div>
 
   </body>
 </html>
