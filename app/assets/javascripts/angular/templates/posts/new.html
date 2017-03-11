@@ -1,8 +1,8 @@
 <h1>New Post Form</h1>
 
-<form ng-submit="ctrl.addPost()">
+<form ng-submit="ctrl.addPost()" enctype="multipart/form-data">
 
-  <div>
+  <!--<div>
     <label>Meme Background Image:</label><br></br>
     <label>Condescending Wonka</label>
     <input
@@ -75,6 +75,20 @@
     <div ng-messages="form.bottomText.$error.required">
       Bottom text required!
     </div>
+  </div><br></br>-->
+
+  <input
+    type="file"
+    name="image"
+    required="required"
+    ng-model="ctrl.post.image"
+    accept="image/*" base-sixty-four-input
+     />
+
+  <div ng-if="form.image.$touched">
+    <div ng-messages="form.image.$error.required">
+      Image required!
+    </div>
   </div><br></br>
 
   <input
@@ -82,7 +96,7 @@
     name="caption"
     ng-model="ctrl.post.caption"
     required="required"
-    placeholder="Post Caption" />
+    placeholder="Caption" />
 
   <div ng-if="form.caption.$touched">
     <div ng-messages="form.caption.$error.required">
@@ -90,6 +104,6 @@
     </div>
   </div><br></br>
 
-  <button type="submit" class="btn btn-primary">Generate Meme</button>
+  <button type="submit" class="btn btn-primary">Post</button>
 
 </form>

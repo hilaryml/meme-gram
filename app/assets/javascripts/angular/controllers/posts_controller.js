@@ -18,19 +18,20 @@ angular.module('app')
     }
 
     function addPost() {
-      var memeBackground = ctrl.meme.backgroundImage;
+      /*var memeBackground = ctrl.meme.backgroundImage;
       var memeTopText = ctrl.meme.topText;
       var memeBottomText = ctrl.meme.bottomText;
 
       PostService
         .makeMeme(EnvService.key(), memeBackground, memeTopText, memeBottomText)
-        .then(data => ctrl.post.image = "data:image/png;base64," + data)
-
-  /*    PostService
+        .then(data => ctrl.post.image = data)
+*/
+      console.log(ctrl.post);
+      PostService
         .addPost(ctrl.post)
         .then(data => ctrl.posts.push(data))
 
-      $state.go('home.posts')*/
+      $state.go('home.posts');
     }
 
     /*function signIn() {

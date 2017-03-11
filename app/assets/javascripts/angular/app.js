@@ -1,4 +1,4 @@
-angular.module('app', ['templates', 'ui.router', 'ngMessages'])
+angular.module('app', ['templates', 'ui.router', 'ngMessages', 'ng-file-model', 'naif.base64'])
 
   .config(['$httpProvider','$stateProvider', '$urlRouterProvider', function($httpProvider, $stateProvider, $urlRouterProvider) {
     $httpProvider.defaults.headers.common['X-CSRF-Token']
@@ -48,7 +48,7 @@ angular.module('app', ['templates', 'ui.router', 'ngMessages'])
         templateUrl: 'angular/templates/posts/show.html',
         controller: 'PostsController as ctrl'
       })
-      
+
 
   $urlRouterProvider.otherwise('/');
 }]);

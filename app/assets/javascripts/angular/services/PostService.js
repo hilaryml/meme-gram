@@ -5,7 +5,7 @@ angular
     return {
       getPosts,
       getPost,
-      makeMeme,
+    //  makeMeme,
       addPost
     }
 
@@ -21,19 +21,20 @@ angular
         .catch(error => console.log(error))
     }
 
-    function makeMeme(key, backgroundImage, topText, bottomText) {
+  /*  function makeMeme(key, backgroundImage, topText, bottomText) {
       const request = {
         method: 'GET',
         url: 'https://ronreiter-meme-generator.p.mashape.com/meme?bottom=' + bottomText + '&font=Impact&font_size=50&meme=' + backgroundImage + '&top=' + topText,
         headers: {
-          "X-Mashape-Authorization": key
+          'X-Mashape-Authorization': key,
+          'Content-Type': 'image/jpeg'
         }
       }
 
       return $http(request)
-        .then(response => response.data)//function (response) { document.getElementById("img").src = "data:image/png;base64," + response.data;})
+        .then(response => response.data)
         .catch(error => console.log(error))
-    }
+    }*/
 
     function addPost(postInfo) {
       const request = {
@@ -46,7 +47,7 @@ angular
       }
 
       return $http(request)
-        .then(response => console.log(response.data))
+        .then(response => response.data)
         .catch(error => console.log(error))
     }
     /*function signUpUser(userInfo) {
