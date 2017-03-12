@@ -5,7 +5,6 @@ angular
     return {
       getPosts,
       getPost,
-    //  makeMeme,
       addPost
     }
 
@@ -21,21 +20,6 @@ angular
         .catch(error => console.log(error))
     }
 
-  /*  function makeMeme(key, backgroundImage, topText, bottomText) {
-      const request = {
-        method: 'GET',
-        url: 'https://ronreiter-meme-generator.p.mashape.com/meme?bottom=' + bottomText + '&font=Impact&font_size=50&meme=' + backgroundImage + '&top=' + topText,
-        headers: {
-          'X-Mashape-Authorization': key,
-          'Content-Type': 'image/jpeg'
-        }
-      }
-
-      return $http(request)
-        .then(response => response.data)
-        .catch(error => console.log(error))
-    }*/
-
     function addPost(postInfo) {
       const request = {
         method: 'POST',
@@ -50,37 +34,8 @@ angular
         .then(response => response.data)
         .catch(error => console.log(error))
     }
-    /*function signUpUser(userInfo) {
-      const request = {
-        method: 'POST',
-        url: '/api/users',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        data: { user: userInfo }
-      }
 
-      return $http(request)
-        .then(response => response.data)
-        .catch(error => console.log(error))
-    }
-
-    function signInUser(userInfo) {
-      const request = {
-        method: 'POST',
-        url: '/api/sessions',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        data: { user: userInfo }
-      }
-
-      return $http(request)
-        .then(response => response.data)
-        .catch(error => console.log(error))
-    }
-
-    function signOutUser(sessionId) {
+    /*function signOutUser(sessionId) {
       const request = {
         method: 'DELETE',
         url: '/api/sessions' + sessionId,
