@@ -1,12 +1,11 @@
-<h1>Posts Index</h1>
+<h1>Stories</h1>
 
 <a
   ui-sref="home.post({ postId: post.id })"
-  data-ng-repeat="post in ctrl.posts"> <!--used to be users-->
-
-  <!--<img src="post.image">-->
+  data-ng-repeat="post in ctrl.posts">
 
   <h3>
-    <span data-ng-bind="post.caption"></span>
+    <span data-ng-bind="post.content"></span>
+    <p>Add the likes for each post here</p>
   </h3>
 </a>
