@@ -1,52 +1,52 @@
 <h1>New Post Form</h1>
 
-<form ng-submit="ctrl.addPost()" enctype="multipart/form-data">
+<form ng-submit="ctrl.addPost()">
 
   <!--<div>
-    <label>Meme Background Image:</label><br></br>
+    <label>Meme Background photo:</label><br></br>
     <label>Condescending Wonka</label>
     <input
       type="radio"
-      name="backgroundImage"
-      ng-model="ctrl.meme.backgroundImage"
+      name="backgroundphoto"
+      ng-model="ctrl.meme.backgroundphoto"
       required="required"
       value="Condescending Wonka" />
 
     <label>Bear Grylls</label>
     <input
       type="radio"
-      name="backgroundImage"
-      ng-model="ctrl.meme.backgroundImage"
+      name="backgroundphoto"
+      ng-model="ctrl.meme.backgroundphoto"
       required="required"
       value="Bear Grylls" />
 
     <label>College Freshman</label>
     <input
       type="radio"
-      name="backgroundImage"
-      ng-model="ctrl.meme.backgroundImage"
+      name="backgroundphoto"
+      ng-model="ctrl.meme.backgroundphoto"
       required="required"
       value="College Freshman" />
 
     <label>Courage Wolf</label>
     <input
       type="radio"
-      name="backgroundImage"
-      ng-model="ctrl.meme.backgroundImage"
+      name="backgroundphoto"
+      ng-model="ctrl.meme.backgroundphoto"
       required="required"
       value="Courage Wolf" />
 
     <label>Ermahgerd Berks</label>
     <input
       type="radio"
-      name="backgroundImage"
-      ng-model="ctrl.meme.backgroundImage"
+      name="backgroundphoto"
+      ng-model="ctrl.meme.backgroundphoto"
       required="required"
       value="Ermahgerd Berks" />
 
-    <div ng-if="form.backgroundImage.$touched">
-      <div ng-messages="form.backgroungImage.$error.required">
-        Background image required!
+    <div ng-if="form.backgroundphoto.$touched">
+      <div ng-messages="form.backgroungphoto.$error.required">
+        Background photo required!
       </div>
     </div>
   </div><br>
@@ -81,13 +81,13 @@
     type="file"
     name="image"
     required="required"
-    ng-model="ctrl.post.image"
-    accept="image/*" base-sixty-four-input
+    ng-file-model="ctrl.post.image"
      />
+     <!--accept="image/*" base-sixty-four-input-->
 
   <div ng-if="form.image.$touched">
     <div ng-messages="form.image.$error.required">
-      Image required!
+      photo required!
     </div>
   </div><br></br>
 
