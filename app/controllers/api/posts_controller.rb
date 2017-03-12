@@ -11,9 +11,11 @@ class Api::PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    current_user.posts << @post
     if @post.save
       render json: @post
     else
+      puts @post.errors.full_messages
       render json: { error: "Unsuccessful. Please try again", status: 500 },
       status: 500
     end

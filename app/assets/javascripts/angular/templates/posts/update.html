@@ -1,16 +1,16 @@
-<h1>And so it begins...</h1>
+<h1>Continue the story...</h1>
 
 <form ng-submit="ctrl.addPost()">
 
   <input
     type="text"
     name="content"
-    ng-model="ctrl.post.content"
+    ng-model="ctrl.post.newContent"
     required="required"
     placeholder="Content" />
 
-  <div ng-if="form.content.$touched">
-    <div ng-messages="form.content.$error.required">
+  <div ng-if="form.newContent.$touched">
+    <div ng-messages="form.newContent.$error.required">
       Content required!
     </div>
   </div><br></br>

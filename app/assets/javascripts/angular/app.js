@@ -48,7 +48,11 @@ angular.module('app', ['templates', 'ui.router', 'ngMessages'])
         templateUrl: 'angular/templates/posts/show.html',
         controller: 'PostsController as ctrl'
       })
-
+      .state('home.updatePost', {
+        url: 'posts/:postId/update',
+        templateUrl: 'angular/templates/posts/update.html',
+        controller: 'PostsController as ctrl'
+      })
 
   $urlRouterProvider.otherwise('/');
 }]);

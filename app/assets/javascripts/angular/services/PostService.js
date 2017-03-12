@@ -5,7 +5,8 @@ angular
     return {
       getPosts,
       getPost,
-      addPost
+      addPost,
+      updatePost
     }
 
     function getPosts() {
@@ -36,4 +37,7 @@ angular
     }
 
     //need to add update service that uses patch or put
+    function updatePost(postId, newContent) {
+      
+    }
   }])
