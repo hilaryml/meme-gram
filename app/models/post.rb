@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
-  has_many :users
+  belongs_to :post_users
+  has_many :users, through: :post_users
   validates :content, presence: true
 end
