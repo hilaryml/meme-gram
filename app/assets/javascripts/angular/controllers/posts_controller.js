@@ -12,7 +12,7 @@ angular.module('app')
       .getPosts()
       .then(data => ctrl.posts = data)
 
-    if ($stateParams.postId) { //might need to use a resolve for this in app.js
+    if ($stateParams.postId) {
       PostService
         .getPost($stateParams.postId)
         .then(data => ctrl.post = data)

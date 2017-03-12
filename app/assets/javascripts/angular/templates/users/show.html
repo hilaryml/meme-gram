@@ -1,2 +1,11 @@
 <h1><span data-ng-bind="ctrl.user.username"></span>'s Profile Page</h1>
-<p>use data-ng-bind spans to show the stories a user has contributed to</p>
+
+<p>Add search bar to search your own stories</p>
+<a
+  ui-sref="home.post({ postId: post.id })"
+  data-ng-repeat="post in ctrl.user.posts">
+
+  <h3>
+    <span data-ng-bind="post.title"></span>
+  </h3>
+</a>
