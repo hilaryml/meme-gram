@@ -23,6 +23,7 @@ class Api::PostsController < ApplicationController
 
   def update
     @post.update(post_params)
+    @post.content = @post.content + " " + @post.new_content
     if @post.save
       render json: @post
     else
@@ -46,6 +47,6 @@ class Api::PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:content, :likes)
+    params.require(:post).permit(:content, :likes, :new_content)
   end
 end

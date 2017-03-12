@@ -37,7 +37,17 @@ angular
     }
 
     //need to add update service that uses patch or put
-    function updatePost(postId, newContent) {
-      
+    function updatePost(postId, postInfo) {
+      const request = {
+        method: 'PUT',
+        url: '/api/posts/' + postId,
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        data: { post: postInfo }
+      }
+      return $http(request)
+        .then(response => response.data)
+        .catch(error => console.log(error))
     }
   }])

@@ -4,7 +4,6 @@ angular.module('app')
   function ($scope, $state, $stateParams, PostService) {
 
     var ctrl = this;
-    var currentPost;
 
     ctrl.addPost = addPost;
     ctrl.updatePost = updatePost;
@@ -30,14 +29,16 @@ angular.module('app')
     //content with a space in between
 
     function updatePost() {
-      PostService
+      var currentPost;
+
+      /*PostService
         .getPost($stateParams.postId)
         .then(data => currentPost = data)
 
-      currentPost.content = currentPost.content + " " + ctrl.post.content
-
+      console.log(currentPost.content = currentPost.content + " " + ctrl.post.content)
+*/
       PostService
-        .updatePost($stateParams.postId, currentPost.content)
+        .updatePost($stateParams.postId, ctrl.post)
         .then(data => ctrl.post = data)//might need to be $scope.$parent.post in order to show up right away
     }
   }]);

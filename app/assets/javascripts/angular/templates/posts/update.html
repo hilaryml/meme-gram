@@ -1,7 +1,25 @@
 <h1>Continue the story...</h1>
 
-<form ng-submit="ctrl.addPost()">
+<form ng-submit="ctrl.updatePost()">
 
-  <ng-include src="'angular/templates/posts/_form.html'"></ng-include>
+  <label>Contribute up to 250 characters to the story.</label><br></br>
+  <input
+    type="text"
+    name="content"
+    ng-model="ctrl.post.new_content"
+    required="required"
+    maxlength="250"
+    placeholder="Content" />
+
+  <div ng-if="form.new_content.$touched">
+    <div ng-messages="form.new_content.$error.required">
+      Content required!
+    </div>
+    <div ng-messages="form.new_content.$error.maxlength">
+      You can only add up to 250 characters!
+    </div>
+  </div><br></br>
+
+  <button type="submit" class="btn btn-primary">Post</button>
 
 </form>
