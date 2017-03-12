@@ -16,6 +16,4 @@
 //= require angular-ui-router
 //= require angular-rails-templates
 //= require angular-messages
-//= require ng-file-model
-//= require angular-base64-upload
 //= require_tree ./angular

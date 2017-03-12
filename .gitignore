@@ -6,6 +6,3 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
-#ignore envservice file
-/app/assets/javascripts/angular/services/EnvService.js
