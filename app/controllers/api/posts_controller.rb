@@ -10,10 +10,7 @@ class Api::PostsController < ApplicationController
   end
 
   def create
-    file = Paperclip.io_adapters.for(post_params[:image][:data])
-    file.original_filename = "file_name"
-    @post = Post.new(caption: post_params[:caption], image: file)
-    #@post.image = file
+    @post = Post.new(post_params)
     if @post.save
       render json: @post
     else
@@ -41,21 +38,12 @@ class Api::PostsController < ApplicationController
 
   private
 
-  def decode_base64
-    decoded_data = Base64.decode64(post_params[:image][:base64])
-    data = StringIO.new(decoded_data)
-    #data.content_type = "image/jpeg"
-    data
-  end
-
   def set_post
     @post = Post.find_by(id: params[:id])
     render json: { error: "Not found" } unless @post
   end
 
   def post_params
-    params.require(:post).permit(:caption, { image: [:lastModified, :lastModifiedDate, :name, :size, :type, :data]})
+    params.require(:post).permit(:content, :likes)
   end
 end
-
-#image: [:filename, :filesize, :filetype, :base64]})#
