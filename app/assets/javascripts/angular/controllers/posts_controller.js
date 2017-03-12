@@ -23,7 +23,7 @@ angular.module('app')
       PostService
         .addPost(ctrl.post)
         .then(data => ctrl.posts.push(data)) //might need to be $scope.$parent.post in order to show up right away
-        
+
       $state.go('home.posts');
     }
     //need to add update function that appends new content to original story
@@ -34,7 +34,7 @@ angular.module('app')
         .getPost($stateParams.postId)
         .then(data => currentPost = data)
 
-      currentPost.content = currentPost.content + " " + ctrl.post.newContent
+      currentPost.content = currentPost.content + " " + ctrl.post.content
 
       PostService
         .updatePost($stateParams.postId, currentPost.content)

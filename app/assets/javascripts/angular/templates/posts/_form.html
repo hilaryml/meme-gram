@@ -1,0 +1,16 @@
+<label>Contribute up to 250 characters to the story.</label><br></br>
+<input
+  type="text"
+  name="content"
+  ng-model="ctrl.post.content"
+  required="required"
+  maxlength="250"
+  placeholder="Content" />
+
+<div ng-if="form.content.$touched">
+  <div ng-messages="form.content.$error.required">
+    Content required!
+  </div>
+</div><br></br>
+
+<button type="submit" class="btn btn-primary">Post</button>
