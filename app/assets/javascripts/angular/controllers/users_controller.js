@@ -33,7 +33,7 @@ angular.module('app')
           data => ctrl.users.push(data),
           data => ctrl.user = data) //used to be $scope.$parent.users but I'm getting double entries...
 
-      $state.go('home.users')
+      $state.go('home.posts')
       signedIn = true;
     }
 

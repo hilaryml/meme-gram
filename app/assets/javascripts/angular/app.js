@@ -1,4 +1,4 @@
-angular.module('app', ['templates', 'ui.router', 'ngMessages', 'ng-file-model', 'naif.base64'])
+angular.module('app', ['templates', 'ui.router', 'ngMessages'])
 
   .config(['$httpProvider','$stateProvider', '$urlRouterProvider', function($httpProvider, $stateProvider, $urlRouterProvider) {
     $httpProvider.defaults.headers.common['X-CSRF-Token']
