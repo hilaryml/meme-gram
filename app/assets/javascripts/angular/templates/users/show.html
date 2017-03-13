@@ -1,6 +1,8 @@
 <h1><span data-ng-bind="ctrl.user.username"></span>'s Profile Page</h1>
 
-<input ng-model="ctrl.search" />
+<input
+  ng-model="ctrl.search"
+  placeholder="search your stories" />
 
 <a
   ui-sref="home.post({ postId: post.id })"
