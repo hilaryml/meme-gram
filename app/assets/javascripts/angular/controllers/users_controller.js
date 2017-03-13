@@ -9,6 +9,12 @@ angular.module('app')
     ctrl.signIn = signIn;
     ctrl.signOut = signOut;
 
+    if (ctrl.user) {
+      $scope.nav_partial_url = "angular/templates/application/_userNavbar.html"
+    } else {
+      $scope.nav_partial_url = "angular/templates/application/_navbar.html"
+    }
+
     UserService
       .getUsers()
       .then(data => ctrl.users = data)
