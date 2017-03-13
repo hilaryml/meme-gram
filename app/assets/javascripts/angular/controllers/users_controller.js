@@ -5,17 +5,11 @@ angular.module('app')
 
     var ctrl = this;
 
-    ctrl.signedIn = false;
     ctrl.currentUser = false;
     ctrl.signUp = signUp;
     ctrl.signIn = signIn;
     ctrl.signOut = signOut;
-
-    /*if (ctrl.currentUser) {
-      $scope.$parent.nav_partial_url = "angular/templates/application/_userNavbar.html"
-    } else if (ctrl.currentUser === false) {
-      $scope.$parent.nav_partial_url = "angular/templates/application/_navbar.html"
-    }*/
+    ctrl.profile = profile;
 
     UserService
       .getUsers()
@@ -25,8 +19,7 @@ angular.module('app')
       UserService
         .getUser($stateParams.userId)
         .then(function (data) {
-          $scope.$parent.currentUseruser = data;
-          ctrl.signedIn = true;
+          ctrl.user = data;
         })
     }
 
@@ -35,8 +28,7 @@ angular.module('app')
         .signUpUser(ctrl.user)
         .then(data => ctrl.users.push(data))
         .then(function (data) {
-          $scope.$parent.currentUser = data;
-          ctrl.signedIn = true;
+          $scope.currentUser = data;
           $state.go('home.posts');
         })
     }
@@ -45,20 +37,22 @@ angular.module('app')
       UserService
         .signInUser(ctrl.user)
         .then(function (data) {
-          $scope.$parent.currentUser = data;
-          ctrl.signedIn = true;
+          $scope.currentUser = data;
           $state.go('home.users');
         })
     }
 
     function signOut() {
       UserService
-        .signOutUser($scope.$parent.currentUser.id) //user id is stored as session id
-        .then(function () {
-          ctrl.signedIn = false;
-        })
+        .signOutUser($scope.currentUser.id) //user id is stored as session id
 
       $state.go('home');
+    }
+
+    function profile() {
+      UserService
+        .getCurrentUser()
+        .then(data => $scope.currentUser = data)
     }
 
   }]);

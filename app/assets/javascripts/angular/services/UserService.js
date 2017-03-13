@@ -1,13 +1,14 @@
 angular
   .module('app')
-  .factory('UserService', ['$http', function ($http) {
+  .service('UserService', ['$http', function ($http) {
 
     return {
       getUsers,
       getUser,
       signUpUser,
       signInUser,
-      signOutUser
+      signOutUser,
+      getCurrentUser
     }
 
     function getUsers() {
@@ -64,6 +65,12 @@ angular
       return $http(request)
         .then(response => response.data)
         .catch(error => console.log(error))
+    }
+
+    function getCurrentUser(callback) {
+        $http.get('/api/current_user')
+          .then(response => response.data)
+          .catch(error => console.log(error))
     }
 
   }])

@@ -1,4 +1,24 @@
-<ul class="nav navbar-nav">
-  <li><a href="" ui-sref="home.signin">Sign In</a></li>
-  <li><a href="" us-sref="home.signup">Sign Up</a></li>
-</ul>
+<div ng-controller="UsersController as ctrl">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="" ui-sref="home.posts">Story Feed</a></li>
+          <!--need logic for user profile page might need to call a user service-->
+          <li><a href="" ng-click="ctrl.profile()">Your Profile</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="" ng-click="ctrl.signOut()"><span class="glyphicon glyphicon-user"></span> Sign Out</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
