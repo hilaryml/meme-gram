@@ -7,6 +7,8 @@ angular.module('app')
 
     ctrl.addPost = addPost;
     ctrl.updatePost = updatePost;
+    ctrl.toggle = false;
+    ctrl.like = like;
 
     PostService
       .getPosts()
@@ -29,6 +31,19 @@ angular.module('app')
       PostService
         .updatePost($stateParams.postId, ctrl.post)
         .then(data => ctrl.post = data)
+    }
+
+    function like() {
+      if (ctrl.toggle === false) {
+        ctrl.post.likes ++
+        ctrl.toggle = true
+      } else {
+        ctrl.post.likes --
+        ctrl.toggle = false
+      }
+
+      PostService
+        .updatePost($stateParams.postId, ctrl.post)
     }
 
   }]);
