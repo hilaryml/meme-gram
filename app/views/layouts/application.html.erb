@@ -7,21 +7,24 @@
     <%= javascript_include_tag 'application' %>
   </head>
   <body>
-
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+    <div ng-controller="UsersController as ctrl">
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <div ng-if="ctrl.signedIn == true">
+              <div ng-include src="angular/templates/application/_userNavbar.html"></div>
+            </div>
+          </div>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <div ng-include src="nav_partial_url"></div>
-        </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
 
     <%= yield %>
 

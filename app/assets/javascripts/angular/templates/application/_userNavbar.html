@@ -1,8 +1,9 @@
 <ul class="nav navbar-nav">
   <li><a href="" ui-sref="home.posts">Story Feed</a></li>
-  <li><a href="" ui-sref="home.user({ userId: ctrl.user.id })">Your Profile</a></li>
+  <!--need logic for user profile page-->
+  <!--<li><a href="" ui-sref="home.user({ userId: ctrl.user.id })">Your Profile</a></li>-->
 </ul>
-
+<!--signout not working-->
 <ul class="nav navbar-nav navbar-right">
-  <li><a href="" ui-sref="ctrl.signOut"><span class="glyphicon glyphicon-user"></span> Sign Out</a></li>
+  <li><a href="" ng-click="ctrl.signOut()"><span class="glyphicon glyphicon-user"></span> Sign Out</a></li>
 </ul>

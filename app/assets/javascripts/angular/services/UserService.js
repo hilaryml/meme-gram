@@ -55,14 +55,14 @@ angular
     function signOutUser(sessionId) {
       const request = {
         method: 'DELETE',
-        url: '/api/sessions' + sessionId,
+        url: '/api/sessions/' + sessionId,
         headers: {
           'Content-Type': 'application/json'
         }
       }
 
       return $http(request)
-        .then(response => console.log(response.data.message))
+        .then(response => response.data)
         .catch(error => console.log(error))
     }
 

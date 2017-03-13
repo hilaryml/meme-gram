@@ -5,15 +5,17 @@ angular.module('app')
 
     var ctrl = this;
 
+    ctrl.signedIn = false;
+    ctrl.currentUser = false;
     ctrl.signUp = signUp;
     ctrl.signIn = signIn;
     ctrl.signOut = signOut;
 
-    if (ctrl.user) {
-      $scope.nav_partial_url = "angular/templates/application/_userNavbar.html"
-    } else {
-      $scope.nav_partial_url = "angular/templates/application/_navbar.html"
-    }
+    /*if (ctrl.currentUser) {
+      $scope.$parent.nav_partial_url = "angular/templates/application/_userNavbar.html"
+    } else if (ctrl.currentUser === false) {
+      $scope.$parent.nav_partial_url = "angular/templates/application/_navbar.html"
+    }*/
 
     UserService
       .getUsers()
@@ -22,31 +24,39 @@ angular.module('app')
     if ($stateParams.userId) { //might need to use a resolve for this in app.js
       UserService
         .getUser($stateParams.userId)
-        .then(data => ctrl.user = data)
+        .then(function (data) {
+          $scope.$parent.currentUseruser = data;
+          ctrl.signedIn = true;
+        })
     }
 
     function signUp() {
       UserService
         .signUpUser(ctrl.user)
-        .then(
-          data => ctrl.users.push(data),
-          data => ctrl.user = data)
-
-      $state.go('home.posts');
+        .then(data => ctrl.users.push(data))
+        .then(function (data) {
+          $scope.$parent.currentUser = data;
+          ctrl.signedIn = true;
+          $state.go('home.posts');
+        })
     }
 
     function signIn() {
       UserService
         .signInUser(ctrl.user)
-        .then(data => ctrl.user = data)
-
-      $state.go('home.users');
+        .then(function (data) {
+          $scope.$parent.currentUser = data;
+          ctrl.signedIn = true;
+          $state.go('home.users');
+        })
     }
 
     function signOut() {
       UserService
-        .signOutUser(ctrl.user.id) //user id is stored as session id
-        .then()
+        .signOutUser($scope.$parent.currentUser.id) //user id is stored as session id
+        .then(function () {
+          ctrl.signedIn = false;
+        })
 
       $state.go('home');
     }
