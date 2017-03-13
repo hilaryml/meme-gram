@@ -30,4 +30,5 @@ angular.module('app')
         .updatePost($stateParams.postId, ctrl.post)
         .then(data => ctrl.post = data)
     }
+
   }]);

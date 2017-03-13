@@ -1,9 +1,10 @@
 <h1><span data-ng-bind="ctrl.user.username"></span>'s Profile Page</h1>
 
-<p>Add search bar to search your own stories</p>
+<input ng-model="ctrl.search" />
+
 <a
   ui-sref="home.post({ postId: post.id })"
-  data-ng-repeat="post in ctrl.user.posts">
+  data-ng-repeat="post in ctrl.user.posts | filter: ctrl.search">
 
   <h3>
     <span data-ng-bind="post.title"></span>
