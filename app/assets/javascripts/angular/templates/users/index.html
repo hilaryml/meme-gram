@@ -1,9 +1,11 @@
 <h1>Users</h1>
 
-<p>add search bar to search users</p>
+<input
+  ng-model="ctrl.search"
+  placeholder="search users" />
 <a
   ui-sref="home.user({ userId: user.id })"
-  data-ng-repeat="user in ctrl.users">
+  data-ng-repeat="user in ctrl.users | filter: ctrl.search">
 
   <h3>
     <span data-ng-bind="user.username"></span>
