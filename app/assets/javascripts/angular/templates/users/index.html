@@ -2,6 +2,7 @@
 
 <input
   ng-model="ctrl.search"
+  ng-model-options="{ debounce: 1000 }"
   placeholder="search users" />
 <a
   ui-sref="home.user({ userId: user.id })"
