@@ -1,5 +1,9 @@
 <h1><span data-ng-bind="ctrl.post.title"></span></h1>
-<p>This story has {{ ctrl.post.likes }} likes.</p><button class="btn btn-primary" ng-model="post.likes" ng-model-options="{ debounce: 1000 }" ng-click="ctrl.like()">Like</button>
+
+<div class="likes">
+  <p>This story has {{ ctrl.post.likes }} likes.</p>
+  <button class="btn btn-primary" ng-model="post.likes" ng-model-options="{ debounce: 1000 }" ng-click="ctrl.like()">Like</button>
+</div>
 
 <p><span data-ng-bind="ctrl.post.content"></span></p>
 
