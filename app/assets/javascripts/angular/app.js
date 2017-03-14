@@ -1,4 +1,4 @@
-angular.module('app', ['templates', 'ui.router', 'ngMessages', 'ngCookies'])
+angular.module('app', ['templates', 'ui.router', 'ui.bootstrap', 'ngMessages', 'ngCookies'])
 
   .config(['$httpProvider','$stateProvider', '$urlRouterProvider', function($httpProvider, $stateProvider, $urlRouterProvider) {
     $httpProvider.defaults.headers.common['X-CSRF-Token']
