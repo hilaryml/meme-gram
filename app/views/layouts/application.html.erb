@@ -18,7 +18,19 @@
             </button>
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
-            <div ng-if="currentUser">
+            <div ng-if="'home.users' | isState">
+              <ng-include src="'angular/templates/application/_navbar.html'"></ng-include>
+            </div>
+            <div ng-if="'home.user' | isState">
+              <ng-include src="'angular/templates/application/_navbar.html'"></ng-include>
+            </div>
+            <div ng-if="'home.profile' | isState">
+              <ng-include src="'angular/templates/application/_navbar.html'"></ng-include>
+            </div>
+            <div ng-if="'home.posts' | isState">
+              <ng-include src="'angular/templates/application/_navbar.html'"></ng-include>
+            </div>
+            <div ng-if="'home.post' | isState">
               <ng-include src="'angular/templates/application/_navbar.html'"></ng-include>
             </div>
           </div>
