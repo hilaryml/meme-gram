@@ -31,19 +31,15 @@ angular.module('app')
     function signIn() {
       UserService
         .signInUser(ctrl.user)
-        
+
       $state.go('home.posts');
     }
 
     function profile() {
-      console.log("profile")
-      console.log(UserService.getUserId())
-      var id;
-      UserService
-        .getUserId()
-        .then(response => id = response)
-        .getUser(id)
-        .then(data => ctrl.user = data)
+      var id = UserService.getUserId()
+      $state.go('home.user', { userId: id });
+      //  .getUser(id)
+      //  .then(data => ctrl.user = data)
     }
 
     function signOut() {

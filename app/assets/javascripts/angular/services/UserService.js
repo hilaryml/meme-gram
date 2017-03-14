@@ -2,7 +2,7 @@ angular
   .module('app')
   .service('UserService', ['$http', '$cookies', function ($http, $cookies) {
 
-    var userId;
+    var currentUser;
 
     return {
       getUsers,
@@ -70,13 +70,15 @@ angular
         .catch(error => console.log(error))
     }
 
-    function setCookie(data) {
-      $cookies.putObject('user', data);
+    function setCookie(user) {
+      currentUser = user;
+      $cookies.putObject('currentUser', user);
+      return currentUser;
     }
 
     function getUserId() {
-      var userId = $cookies.getObject('user').id;
-      return userId;
+      currentUser = $cookies.getObject('currentUser');
+      return currentUser.id;
     }
 
   }])
