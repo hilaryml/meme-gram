@@ -15,7 +15,7 @@ angular.module('app')
       .then(data => ctrl.users = data)
 
     if ($stateParams.userId) { //might need to use a resolve for this in app.js
-    UserService
+      UserService
         .getUser($stateParams.userId)
         .then(data => ctrl.user = data)
     }
