@@ -7,7 +7,7 @@
     <%= javascript_include_tag 'application' %>
   </head>
   <body>
-    <!--<div ng-controller="UsersController as ctrl">
+    <div ng-controller="UsersController as ctrl">
       <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -18,13 +18,13 @@
             </button>
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
-            <div ng-if="ctrl.signedIn === true">
+            <div ng-if="currentUser">
               <ng-include src="'angular/templates/application/_navbar.html'"></ng-include>
             </div>
           </div>
         </div>
       </nav>
-    </div>-->
+    </div>
 
     <%= yield %>
 

@@ -25,6 +25,11 @@ angular.module('app', ['templates', 'ui.router', 'ngMessages', 'ngCookies'])
         templateUrl: 'angular/templates/users/index.html',
         controller: 'UsersController as ctrl'
       })
+      .state('home.profile', {
+        url: 'users/profile',
+        templateUrl: 'angular/templates/users/show.html',
+        controller: 'UsersController as ctrl'
+      })
       .state('home.user', {
         url: 'users/:userId',
         templateUrl: 'angular/templates/users/show.html',
@@ -32,11 +37,6 @@ angular.module('app', ['templates', 'ui.router', 'ngMessages', 'ngCookies'])
         /*resolve: function (UserService, $stateParams) {
           return UserService.getUser($stateParams.id)
         }*/
-      })
-      .state('home.profile', {
-        url: 'users/profile',
-        templateUrl: 'angular/templates/users/show.html',
-        controller: 'UsersController as ctrl'
       })
       .state('home.posts', {
         url: 'posts',

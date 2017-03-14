@@ -1,13 +1,17 @@
 angular
   .module('app')
-  .service('UserService', ['$http', function ($http) {
+  .service('UserService', ['$http', '$cookies', function ($http, $cookies) {
+
+    var userId;
 
     return {
       getUsers,
       getUser,
       signUpUser,
       signInUser,
-      signOutUser
+      signOutUser,
+      setCookie,
+      getUserId
     }
 
     function getUsers() {
@@ -33,7 +37,7 @@ angular
       }
 
       return $http(request)
-        .then(response => response.data)
+        .then(response => setCookie(response.data))
         .catch(error => console.log(error))
     }
 
@@ -48,7 +52,7 @@ angular
       }
 
       return $http(request)
-        .then(response => response.data)
+        .then(response => setCookie(response.data))
         .catch(error => console.log(error))
     }
 
@@ -64,6 +68,15 @@ angular
       return $http(request)
         .then(response => response.data)
         .catch(error => console.log(error))
+    }
+
+    function setCookie(data) {
+      $cookies.putObject('user', data);
+    }
+
+    function getUserId() {
+      var userId = $cookies.getObject('user').id;
+      return userId;
     }
 
   }])

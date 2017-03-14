@@ -4,11 +4,10 @@ angular.module('app')
   function ($scope, $state, $stateParams, $cookies, UserService) {
 
     var ctrl = this;
+
     ctrl.signUp = signUp;
     ctrl.signIn = signIn;
     ctrl.signOut = signOut;
-    ctrl.setCookie = setCookie;
-    ctrl.getUserId = getUserId;
     ctrl.profile = profile;
 
     UserService
@@ -25,43 +24,35 @@ angular.module('app')
       UserService
         .signUpUser(ctrl.user)
         .then(data => ctrl.users.push(data))
-        .then(function (data) {
-          setCookie(data);
-          $state.go('home.posts');
-        })
+
+      $state.go('home.posts');
     }
 
     function signIn() {
       UserService
         .signInUser(ctrl.user)
-        .then(function (data) {
-          setCookie(data);
-          $state.go('home.posts');
-        })
+        
+      $state.go('home.posts');
     }
 
     function profile() {
+      console.log("profile")
+      console.log(UserService.getUserId())
+      var id;
       UserService
-        .getUser(getUserId())
+        .getUserId()
+        .then(response => id = response)
+        .getUser(id)
         .then(data => ctrl.user = data)
     }
 
     function signOut() {
       UserService
-        .signOutUser(getUserId())
+        .signOutUser(UserService.getUserId())
         .then(function() {
           $cookies.remove('user');
           $state.go('home');
         })
-    }
-
-    function setCookie(data) {
-      console.log(data)
-      $cookies.putObject('user', data);
-    }
-
-    function getUserId() {
-      $cookies.getObject('user').id;
     }
 
   }]);
