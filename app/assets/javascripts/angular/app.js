@@ -33,6 +33,11 @@ angular.module('app', ['templates', 'ui.router', 'ngMessages', 'ngCookies'])
           return UserService.getUser($stateParams.id)
         }*/
       })
+      .state('home.profile', {
+        url: 'users/profile',
+        templateUrl: 'angular/templates/users/show.html',
+        controller: 'UsersController as ctrl'
+      })
       .state('home.posts', {
         url: 'posts',
         templateUrl: 'angular/templates/posts/index.html',
