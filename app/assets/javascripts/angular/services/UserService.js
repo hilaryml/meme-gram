@@ -7,8 +7,7 @@ angular
       getUser,
       signUpUser,
       signInUser,
-      signOutUser,
-      getCurrentUser
+      signOutUser
     }
 
     function getUsers() {
@@ -65,12 +64,6 @@ angular
       return $http(request)
         .then(response => response.data)
         .catch(error => console.log(error))
-    }
-
-    function getCurrentUser(callback) {
-        $http.get('/api/current_user')
-          .then(response => response.data)
-          .catch(error => console.log(error))
     }
 
   }])

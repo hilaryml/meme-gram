@@ -28,7 +28,7 @@ angular.module('app')
         .signUpUser(ctrl.user)
         .then(data => ctrl.users.push(data))
         .then(function (data) {
-          $scope.currentUser = data;
+          $scope.$parent.currentUser = data;
           $state.go('home.posts');
         })
     }
@@ -37,22 +37,16 @@ angular.module('app')
       UserService
         .signInUser(ctrl.user)
         .then(function (data) {
-          $scope.currentUser = data;
+          $scope.$parent.currentUser = data;
           $state.go('home.users');
         })
     }
 
     function signOut() {
       UserService
-        .signOutUser($scope.currentUser.id) //user id is stored as session id
+        .signOutUser($scope.$parent.currentUser.id) //user id is stored as session id
 
       $state.go('home');
-    }
-
-    function profile() {
-      UserService
-        .getCurrentUser()
-        .then(data => $scope.currentUser = data)
     }
 
   }]);
