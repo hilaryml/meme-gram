@@ -10,11 +10,11 @@ angular.module('app')
     ctrl.toggle = false;
     ctrl.like = like;
 
-    if (UserService.getCookie() === undefined) {
+    /*if (UserService.getCookie() === undefined) {
       if ($state.is('home.post') || $state.is('home.newPost') || $state.is('home.updatePost')) {
         $state.go('home')
       }
-    }
+    }*/
 
     PostService
       .getPosts()

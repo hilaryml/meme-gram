@@ -22,9 +22,6 @@ class Api::PostsController < ApplicationController
   end
 
   def update
-    if !current_user.posts.include?(@post)
-      current_user.posts << @post
-    end
     @post.update(post_params)
     if @post.new_content
       @post.content = @post.content + " " + @post.new_content

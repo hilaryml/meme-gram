@@ -42,6 +42,7 @@ gem 'angular-rails-templates'
 gem 'bower-rails'
 gem 'angular_rails_csrf'
 gem 'angular-ui-bootstrap-rails'
+gem 'rspec-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
