@@ -10,11 +10,11 @@ angular.module('app')
     ctrl.signOut = signOut;
     ctrl.profile = profile;
 
-  /*  if (UserService.getCookie() === undefined) {
+    if (UserService.getCookie() === undefined) {
       if ($state.is('home.users') || $state.is('home.profile') || $state.is('home.user')) {
         $state.go('home')
       }
-    }*/
+    }
 
     UserService
       .getUsers()

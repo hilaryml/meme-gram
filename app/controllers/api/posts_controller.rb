@@ -23,6 +23,9 @@ class Api::PostsController < ApplicationController
 
   def update
     @post.update(post_params)
+    #if !current_user.posts.include?(@post)
+    #  current_user.posts << @post
+    #end
     if @post.new_content
       @post.content = @post.content + " " + @post.new_content
     end
@@ -49,6 +52,6 @@ class Api::PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :content, :likes, :new_content)
+    params.require(:post).permit(:id, :title, :content, :likes, :new_content)
   end
 end
