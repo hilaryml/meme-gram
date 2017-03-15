@@ -10,6 +10,12 @@ angular.module('app')
     ctrl.signOut = signOut;
     ctrl.profile = profile;
 
+    if (UserService.getCookie() === undefined) {
+      if ($state.is('home.users') || $state.is('home.profile') || $state.is('home.user')) {
+        $state.go('home')
+      }
+    }
+
     UserService
       .getUsers()
       .then(data => ctrl.users = data)
@@ -36,13 +42,13 @@ angular.module('app')
     }
 
     function profile() {
-      var id = UserService.getUserId()
+      var id = UserService.getCookie().id
       $state.go('home.user', { userId: id });
     }
 
     function signOut() {
       UserService
-        .signOutUser(UserService.getUserId())
+        .signOutUser(UserService.getCookie().id)
         .then(UserService.removeCookie())
 
       $state.go('home');

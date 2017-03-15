@@ -1,7 +1,7 @@
 angular.module('app')
 
-  .controller('PostsController', ['$scope', '$state', '$stateParams', 'PostService',
-  function ($scope, $state, $stateParams, PostService) {
+  .controller('PostsController', ['$scope', '$state', '$stateParams', 'PostService', 'UserService',
+  function ($scope, $state, $stateParams, PostService, UserService) {
 
     var ctrl = this;
 
@@ -9,6 +9,12 @@ angular.module('app')
     ctrl.updatePost = updatePost;
     ctrl.toggle = false;
     ctrl.like = like;
+
+    if (UserService.getCookie() === undefined) {
+      if ($state.is('home.post') || $state.is('home.newPost') || $state.is('home.updatePost')) {
+        $state.go('home')
+      }
+    }
 
     PostService
       .getPosts()
