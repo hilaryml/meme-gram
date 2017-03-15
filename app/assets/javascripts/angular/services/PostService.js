@@ -36,7 +36,6 @@ angular
         .catch(error => console.log(error))
     }
 
-    //need to add update service that uses patch or put
     function updatePost(postId, postInfo) {
       const request = {
         method: 'PUT',

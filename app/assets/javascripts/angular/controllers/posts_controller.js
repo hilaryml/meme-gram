@@ -1,7 +1,7 @@
 angular.module('app')
 
-  .controller('PostsController', ['$scope', '$state', '$stateParams', 'PostService', 'UserService',
-  function ($scope, $state, $stateParams, PostService, UserService) {
+  .controller('PostsController', ['$scope', '$state', '$stateParams', 'PostService', 'UserService', 'PostUserService',
+  function ($scope, $state, $stateParams, PostService, UserService, PostUserService) {
 
     var ctrl = this;
 
@@ -34,6 +34,9 @@ angular.module('app')
     }
 
     function updatePost() {
+      PostUserService
+        .addPostUser($stateParams.postId, UserService.getCookie().id)
+
       PostService
         .updatePost($stateParams.postId, ctrl.post)
         .then(data => ctrl.post = data)

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     resources :users
     resources :posts
     resources :sessions
+    resources :post_users
   end
 
   root 'application#index'
