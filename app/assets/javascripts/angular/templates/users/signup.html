@@ -1,7 +1,8 @@
 <h4><strong>SIGN UP</strong></h4>
+<br></br>
 
 <form ng-submit="ctrl.signUp()">
-<!--removed user controller prefix from ng-submit and ng-model and almost had it working-->
+
   <input
     type="text"
     name="username"
@@ -13,7 +14,7 @@
     <div ng-messages="form.username.$error.required">
       Username required!
     </div>
-  </div>
+  </div><br></br>
 
   <input
     type="email"
@@ -26,7 +27,7 @@
     <div ng-messages="form.username.$error.required">
       Email required!
     </div>
-  </div>
+  </div><br></br>
 
   <input
     type="password"
@@ -43,10 +44,11 @@
     <div ng-messages="form.password.$error.minlength">
       Password must be more than 6 characters!
     </div>
-  </div>
+  </div><br></br>
 
   <button type="submit" class="btn btn-primary">Sign Up</button>
 
 </form>
 
+<br></br>
 <p>Already have an account? <a href="#" ui-sref="home.signin" ui-sref-active="active">Sign in here.</a></p>
