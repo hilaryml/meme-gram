@@ -26,7 +26,9 @@ class Api::PostsController < ApplicationController
       current_user.posts << @post
     end
     @post.update(post_params)
-    @post.content = @post.content + " " + @post.new_content
+    if @post.new_content
+      @post.content = @post.content + " " + @post.new_content
+    end
     if @post.save
       render json: @post
     else
