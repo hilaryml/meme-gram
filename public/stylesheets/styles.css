@@ -35,7 +35,7 @@
   overflow: auto;
 }
 
-input[class="search"] {
+.search {
  background: transparent;
  border: none;
  height: 20%;

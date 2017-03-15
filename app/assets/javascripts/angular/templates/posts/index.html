@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-sm-4 well">
       <div class="well">
-        <h4><strong>Story Feed</strong></h4>
+        <h3><strong>STORY FEED</strong></h3>
       </div>
       <div class="well">
         <p>Your own collaborative adventure is just a <a href="" ui-sref="home.newPost">click</a> away.</p>
@@ -14,11 +14,11 @@
         <div class="col-sm-12">
           <div class="panel panel-default text-left">
             <div class="panel-body">
-              <input
+              <p contenteditable="true"><input
                 class="search"
                 ng-model="ctrl.search"
                 ng-model-options="{ debounce: 1000 }"
-                placeholder="search stories" />
+                placeholder="search stories" /></p>
             </div>
           </div>
         </div>
@@ -37,7 +37,7 @@
           <div class="col-sm-4">
             <div class="well">
               {{ post.likes }} likes
-              <button class="btn btn-primary" ng-model="post.likes" ng-model-options="{ debounce: 1000 }" ng-click="ctrl.like()">Like</button>    
+              <button class="btn btn-primary" ng-model="post.likes" ng-model-options="{ debounce: 1000 }" ng-click="ctrl.like()">Like</button>
             </div>
           </div>
         </div>
