@@ -24,11 +24,11 @@
    margin-bottom: 0;
  }
 
- /*.jumbotron {
-   background-image: url("/images/grass.jpg");
+ .jumbotron {
+   /*background-image: url("/assets/images/aged.jpg");*/
    background-repeat: no-repeat;
    background-size: cover;
- }*/
+ }
 
  .wrapper {
    width: 55%;

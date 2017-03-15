@@ -1,7 +1,9 @@
 angular.module('app')
 
-  .controller('UsersController', ['$scope', '$state', '$stateParams','$cookies', 'UserService',
-  function ($scope, $state, $stateParams, $cookies, UserService) {
+  .controller('UsersController', ['$scope', '$sce', '$state', '$stateParams','$cookies', 'UserService',
+  function ($scope, $sce, $state, $stateParams, $cookies, UserService) {
+
+    $scope.myImgSrc = $sce.trustAsResourceUrl("/../../assets/images/aged.jpg")
 
     var ctrl = this;
 
