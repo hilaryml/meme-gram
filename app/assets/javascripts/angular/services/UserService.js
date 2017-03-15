@@ -11,7 +11,8 @@ angular
       signInUser,
       signOutUser,
       setCookie,
-      getUserId
+      getUserId,
+      removeCookie
     }
 
     function getUsers() {
@@ -79,6 +80,10 @@ angular
     function getUserId() {
       currentUser = $cookies.getObject('currentUser');
       return currentUser.id;
+    }
+
+    function removeCookie() {
+      $cookies.remove('currentUser');
     }
 
   }])

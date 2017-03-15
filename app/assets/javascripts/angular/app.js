@@ -1,8 +1,7 @@
-angular.module('app', ['templates', 'ui.router', 'ui.bootstrap', 'ngMessages', 'ngCookies'])
+angular.module('app', ['templates', 'ui.router', 'ngMessages', 'ngCookies'])
 
   .config(['$httpProvider','$stateProvider', '$urlRouterProvider', function($httpProvider, $stateProvider, $urlRouterProvider) {
-    $httpProvider.defaults.headers.common['X-CSRF-Token']
-    = $('meta[name=csrf-token]').attr('content')
+    $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
 
     $stateProvider
       .state('home', {
@@ -34,9 +33,6 @@ angular.module('app', ['templates', 'ui.router', 'ui.bootstrap', 'ngMessages', '
         url: 'users/:userId',
         templateUrl: 'angular/templates/users/show.html',
         controller: 'UsersController as ctrl'
-        /*resolve: function (UserService, $stateParams) {
-          return UserService.getUser($stateParams.id)
-        }*/
       })
       .state('home.posts', {
         url: 'posts',

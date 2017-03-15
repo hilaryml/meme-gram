@@ -14,7 +14,7 @@ angular.module('app')
       .getUsers()
       .then(data => ctrl.users = data)
 
-    if ($stateParams.userId) { //might need to use a resolve for this in app.js
+    if ($stateParams.userId) {
       UserService
         .getUser($stateParams.userId)
         .then(data => ctrl.user = data)
@@ -43,10 +43,9 @@ angular.module('app')
     function signOut() {
       UserService
         .signOutUser(UserService.getUserId())
-        .then(function() {
-          $cookies.remove('user');
-          $state.go('home');
-        })
+        .then(UserService.removeCookie())
+
+      $state.go('home');
     }
 
   }]);
