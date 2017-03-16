@@ -36,12 +36,10 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 gem 'active_model_serializers'
-gem 'paperclip'
 gem 'angularjs-rails'
 gem 'angular-rails-templates'
 gem 'bower-rails'
 gem 'angular_rails_csrf'
-gem 'angular-ui-bootstrap-rails'
 gem 'rspec-rails'
 
 group :development, :test do

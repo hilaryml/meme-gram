@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Verbatim is a web-app built with a Rails back-end and AngularJS front-end.
 
-Things you may want to cover:
+It's made to allow users to collaborate and create collective stories, with users only able to contribute 250 characters at a time.
 
-* Ruby version
+##Installation
 
-* System dependencies
+Clone this repo, and run rake db:migrate (and rake db:seed if you would like to start out with dummy data).
 
-* Configuration
+Run the server with rails s.
 
-* Database creation
+## License
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The gem is available as open source under the terms of the [MIT License](opensource.org/licenses/MIT).
