@@ -42,8 +42,8 @@ angular.module('app')
     }
 
     function profile() {
-      var id = UserService.getCookie().id
-      $state.go('home.user', { userId: id });
+      var user = UserService.getCookie()
+      $state.go('home.user', { userId: user.id });
     }
 
     function signOut() {

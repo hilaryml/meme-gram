@@ -11,7 +11,6 @@ class Api::PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    current_user.posts << @post
     if @post.save
       render json: @post
     else

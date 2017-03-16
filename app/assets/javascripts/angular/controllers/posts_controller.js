@@ -9,6 +9,7 @@ angular.module('app')
     ctrl.updatePost = updatePost;
     ctrl.toggle = false;
     ctrl.like = like;
+    ctrl.makePostUser = makePostUser;
 
     if (UserService.getCookie() === undefined) {
       if ($state.is('home.post') || $state.is('home.newPost') || $state.is('home.updatePost')) {
@@ -29,7 +30,16 @@ angular.module('app')
     function addPost() {
       PostService
         .addPost(ctrl.post)
-        .then(post => ctrl.posts.push(post))
+        .then(function(post) {
+          makePostUser(post);
+          ctrl.posts.push(ctrl.post);
+        })
+      }
+
+    function makePostUser(post) {
+      PostUserService
+        .addPostUser(post.id, UserService.getCookie().id)
+
       $state.go('home.posts');
     }
 
