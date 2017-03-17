@@ -14,16 +14,12 @@ class Api::PostsController < ApplicationController
     if @post.save
       render json: @post
     else
-      puts @post.errors.full_messages
       render json: { error: "Unsuccessful. Please try again", status: 500 },
       status: 500
     end
   end
 
   def update
-    #if !current_user.posts.include?(@post)
-    #  current_user.posts << @post
-    #end
     @post.update(post_params)
     if @post.new_content
       @post.content = @post.content + " " + @post.new_content
@@ -35,13 +31,7 @@ class Api::PostsController < ApplicationController
       status: 500
     end
   end
-
-  def destroy
-    @post.destroy
-    render json: { message: "Post destroyed", status: 200 },
-    status: 200
-  end
-
+  
 
   private
 
