@@ -10,6 +10,7 @@ angular.module('app')
     ctrl.toggle = false;
     ctrl.like = like;
     ctrl.makePostUser = makePostUser;
+    ctrl.sort = sort;
 
     if (UserService.getCookie() === undefined) {
       if ($state.is('home.post') || $state.is('home.newPost') || $state.is('home.updatePost')) {
@@ -28,12 +29,15 @@ angular.module('app')
     }
 
     function addPost() {
+      console.log('a')
       PostService
         .addPost(ctrl.post)
         .then(function(post) {
+          console.log('b')
           makePostUser(post);
           ctrl.posts.push(ctrl.post);
         })
+        console.log('c')
       }
 
     function makePostUser(post) {
@@ -63,6 +67,12 @@ angular.module('app')
 
       PostService
         .updatePost($stateParams.postId, ctrl.post)
+    }
+
+    function sort() {
+      ctrl.posts.sort(function(a,b){
+        return b.likes-a.likes
+      })
     }
 
   }]);
