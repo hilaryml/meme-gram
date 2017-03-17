@@ -17,5 +17,4 @@
 //= require angular-rails-templates
 //= require angular-messages
 //= require angular-cookies
-//= require angular-ui-bootstrap-tpls
 //= require_tree ./angular
