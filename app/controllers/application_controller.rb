@@ -6,11 +6,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @user = User.find_by(id: session[:id]) 
-  end
-
-  def logged_in?
-    !!current_user
+    @user = User.find_by(id: session[:id])
   end
 
   def set_csrf_cookie_for_ng
