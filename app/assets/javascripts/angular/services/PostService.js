@@ -30,7 +30,6 @@ angular
         },
         data: { post: postInfo }
       }
-
       return $http(request)
         .then(response => response.data)
         .catch(error => console.log(error))

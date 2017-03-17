@@ -5,7 +5,7 @@ class Api::PostUsersController < ApplicationController
     user = User.find_by(id: params[:user_id])
     post_user = PostUser.new(post_user_params)
     if !post.users.include?(user)
-      post_user.save
+      post_user.save!
       render json: post_user
     else
       render json: { error: "User already associated with post", status: 200 },

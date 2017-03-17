@@ -29,15 +29,12 @@ angular.module('app')
     }
 
     function addPost() {
-      console.log('a')
       PostService
         .addPost(ctrl.post)
         .then(function(post) {
-          console.log('b')
           makePostUser(post);
           ctrl.posts.push(ctrl.post);
         })
-        console.log('c')
       }
 
     function makePostUser(post) {
