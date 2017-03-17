@@ -10,9 +10,9 @@ class Api::PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    if @post.save
-      render json: @post
+    post = Post.new(post_params)
+    if post.save
+      render json: post
     else
       render json: { error: "Unsuccessful. Please try again", status: 500 },
       status: 500
@@ -31,7 +31,7 @@ class Api::PostsController < ApplicationController
       status: 500
     end
   end
-  
+
 
   private
 
