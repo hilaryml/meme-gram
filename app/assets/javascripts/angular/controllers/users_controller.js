@@ -23,13 +23,16 @@ angular.module('app')
     if ($stateParams.userId) {
       UserService
         .getUser($stateParams.userId)
-        .then(data => ctrl.user = data)
+        .then(data => ctrl.user = data);
     }
 
     function signUp() {
       UserService
         .signUpUser(ctrl.user)
-        .then(data => ctrl.users.push(data))
+        .then(function(data) {
+          ctrl.users.push(data);
+          ctrl.user = data;
+        })
 
       $state.go('home.posts');
     }
@@ -37,12 +40,16 @@ angular.module('app')
     function signIn() {
       UserService
         .signInUser(ctrl.user)
+        .then(function(data) {
+          ctrl.users.push(data);
+          ctrl.user = data; //didn't use .then to set ctrl.user = to return from setCookie()
+        })
 
       $state.go('home.posts');
     }
 
     function profile() {
-      var user = UserService.getCookie()
+      var user = UserService.getCookie();
       $state.go('home.user', { userId: user.id });
     }
 
