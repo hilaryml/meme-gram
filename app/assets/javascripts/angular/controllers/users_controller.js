@@ -42,7 +42,7 @@ angular.module('app')
         .signInUser(ctrl.user)
         .then(function(data) {
           ctrl.users.push(data);
-          ctrl.user = data; //didn't use .then to set ctrl.user = to return from setCookie()
+          ctrl.user = data; 
         })
 
       $state.go('home.posts');
